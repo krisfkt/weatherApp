@@ -33,7 +33,6 @@ public class weatherData {
             int roundedMinValue=(int)Math.rint(tempMinResult);
             weatherZ.zTemp_Min=Integer.toString(roundedMinValue);
 
-
             return weatherZ;
         }
 

@@ -3,7 +3,6 @@ package student.weatherapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -15,13 +14,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
 import org.json.JSONObject;
-
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
@@ -155,13 +151,12 @@ public class MainActivity extends AppCompatActivity {
                 updateUI(weatherZ);
 
 
-                // super.onSuccess(statusCode, headers, response);
             }
 
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                //super.onFailure(statusCode, headers, throwable, errorResponse);
+
             }
         });
 
