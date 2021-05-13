@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AAAAAA"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,6 +36,16 @@
             android:textColor="#ffffff"
             >
 
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/condition"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:text="@string/conditonLoad"
+            >
         </TextView>
 
         <RelativeLayout
@@ -69,16 +80,7 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/condition"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textColor="#ffffff"
-            android:text="@string/conditonLoad"
-            >
-        </TextView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +105,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:id="@+id/weatherIcon"
             android:src="@drawable/unknown"
             android:layout_marginTop="80dp"
