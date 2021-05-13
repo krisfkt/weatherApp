@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">weatherApp</string>
+    <string name="find_other_city_weather">Find other City weather</string>
+    <string name="humidity">Humidity:??%</string>
+    <string name="wind_km_h">Wind:??km/h</string>
+    <string name="conditonLoad">---------</string>
+    <string name="l_0">L:0°</string>
+    <string name="h_0">H:0°</string>
+    <string name="_0">0°</string>
+    <string name="loading">Loading...</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="enter_city_name">Enter City Name</string>
 </resources>

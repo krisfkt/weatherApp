@@ -8,11 +8,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -59,12 +57,9 @@ public class MainActivity extends AppCompatActivity {
         TEMP_MAX = findViewById(R.id.temp_max);
         TEMP_MIN = findViewById(R.id.temp_min);
 
-        CITYFINDER.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, city.class);
-                startActivity(intent);
-            }
+        CITYFINDER.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, city.class);
+            startActivity(intent);
         });
 
     }
@@ -95,21 +90,17 @@ public class MainActivity extends AppCompatActivity {
     private void getWeatherForCurrentLocation() {
 
         LOCATIONMANAGER = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        LOCATIONLISTENER = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
+        LOCATIONLISTENER = location -> {
 
-                String Latitude = String.valueOf(location.getLatitude());
-                String Longitude = String.valueOf(location.getLongitude());
+            String Latitude = String.valueOf(location.getLatitude());
+            String Longitude = String.valueOf(location.getLongitude());
 
-                RequestParams params =new RequestParams();
-                params.put("lat" ,Latitude);
-                params.put("lon",Longitude);
-                params.put("appid",APP_ID);
-                networkingStuff(params);
+            RequestParams params =new RequestParams();
+            params.put("lat" ,Latitude);
+            params.put("lon",Longitude);
+            params.put("appid",APP_ID);
+            networkingStuff(params);
 
-
-            }
 
         };
 
@@ -142,10 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Location recognized",Toast.LENGTH_SHORT).show();
                 getWeatherForCurrentLocation();
             }
-            else
-            {
-                //user denied the permission
-            }
+
         }
 
 
